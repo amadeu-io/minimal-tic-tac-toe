@@ -1,0 +1,45 @@
+/* remove default styles */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --board-side: 30vw;
+}
+
+/* generic styles */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* board */
+
+.board {
+  height: var(--board-side);
+  width: var(--board-side);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
+}
+
+.cell {
+  font-weight: 100;
+  background-color: #ebebeb;
+  border: 1px solid #bababa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

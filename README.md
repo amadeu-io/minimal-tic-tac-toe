@@ -9,7 +9,7 @@
 
 ### About 📖
 
-Second project of the JavaScript chapter in [The Odin Project](https://www.theodinproject.com). Currently in development
+Second project of the JavaScript chapter in [The Odin Project](https://www.theodinproject.com). Currently in development.
 
 ### Resources Used 📚
 
