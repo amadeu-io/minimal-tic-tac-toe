@@ -46,8 +46,7 @@ let Game = (() => {
   };
 
   // winning message. receives the result from checkWin and returns a display message
-  const endMessage = () => {
-    const winner = checkWin();
+  const endMessage = (winner) => {
     if (winner === "x") {
       return `${players[0]} wins!`;
     } else if (winner === "o") {
@@ -97,11 +96,11 @@ cells.forEach((cell, index) => {
       Game.renderGameBoard();
     }
 
-    console.log(Game.checkWin(Game.gameBoard));
-    console.log(count);
+    const winner = Game.checkWin(Game.gameBoard);
+
     // assign & display end message & button
-    endDisplay.innerHTML = Game.endMessage(Game.checkWin(Game.gameBoard));
-    if (Game.endMessage(Game.checkWin(Game.gameBoard))) {
+    endDisplay.innerHTML = Game.endMessage(winner);
+    if (Game.endMessage(winner)) {
       endContainer.style.display = "flex";
     }
   });
