@@ -68,6 +68,7 @@ let boardContainer = document.querySelector(".board-container");
 let cells = document.querySelectorAll(".cell");
 let endDisplay = document.querySelector(".end-display");
 let endContainer = document.querySelector(".end-container");
+let reset = document.querySelector(".reset");
 let players = [];
 
 // form
@@ -81,7 +82,7 @@ form.addEventListener("submit", (e) => {
   // hide form
   form.style.display = "none";
 
-  // display game board
+  // show game board
   boardContainer.style.display = "block";
 });
 
@@ -104,4 +105,22 @@ cells.forEach((cell, index) => {
       endContainer.style.display = "flex";
     }
   });
+});
+
+// reset
+reset.addEventListener("click", () => {
+  turn ^= true;
+
+  // show form
+  form.style.display = "block";
+
+  // hide game board
+  boardContainer.style.display = "none";
+
+  count = 0;
+  Game.gameBoard.fill("");
+
+  // hide and reset end container
+  endDisplay.innerHTML = "";
+  endContainer.style.display = "none";
 });
