@@ -49,9 +49,9 @@ let Game = (() => {
   const endMessage = () => {
     const winner = checkWin();
     if (winner === "x") {
-      return `${playerX} wins!`;
+      return `${players[0]} wins!`;
     } else if (winner === "o") {
-      return `${playerO} wins!`;
+      return `${players[1]} wins!`;
     } else if (winner === "tie") {
       return "It's a tie!";
     }
@@ -69,16 +69,15 @@ let boardContainer = document.querySelector(".board-container");
 let cells = document.querySelectorAll(".cell");
 let endDisplay = document.querySelector(".end-display");
 let endContainer = document.querySelector(".end-container");
-let playerX, playerO;
+let players = [];
 
 // form
 form.addEventListener("submit", (e) => {
   e.preventDefault(); // do not reload the page
 
-  // get form data and build players objects with factory
+  // get form data and assign to players
   const formData = new FormData(form);
-  playerX = formData.get("player-x");
-  playerO = formData.get("player-o");
+  players = [formData.get("player-x"), formData.get("player-o")];
 
   // hide form
   form.style.display = "none";
@@ -98,6 +97,8 @@ cells.forEach((cell, index) => {
       Game.renderGameBoard();
     }
 
+    console.log(Game.checkWin(Game.gameBoard));
+    console.log(count);
     // assign & display end message & button
     endDisplay.innerHTML = Game.endMessage(Game.checkWin(Game.gameBoard));
     if (Game.endMessage(Game.checkWin(Game.gameBoard))) {
