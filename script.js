@@ -1,8 +1,3 @@
-// players factory - const jeff = playerFactory("Jeff", "x");
-const playerFactory = (name, symbol) => {
-  return { name, symbol };
-};
-
 // game module
 let Game = (() => {
   let gameBoard = new Array(9); // empty array of 9 undefined
@@ -54,9 +49,9 @@ let Game = (() => {
   const endMessage = () => {
     const winner = checkWin();
     if (winner === "x") {
-      return `${playerX.name} wins!`;
+      return `${playerX} wins!`;
     } else if (winner === "o") {
-      return `${playerO.name} wins!`;
+      return `${playerO} wins!`;
     } else if (winner === "tie") {
       return "It's a tie!";
     }
@@ -82,8 +77,8 @@ form.addEventListener("submit", (e) => {
 
   // get form data and build players objects with factory
   const formData = new FormData(form);
-  playerX = playerFactory(formData.get("player-x"), "x");
-  playerO = playerFactory(formData.get("player-o"), "o");
+  playerX = formData.get("player-x");
+  playerO = formData.get("player-o");
 
   // hide form
   form.style.display = "none";
