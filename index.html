@@ -14,17 +14,44 @@
       rel="stylesheet" />
   </head>
   <body>
+    <!-- title -->
+    <div class="title"><a href="#" target="_blank">minimal tic-tac-toe</a></div>
+
+    <!-- form -->
+    <form>
+      <div class="input-container">
+        <label for="player-x">x</label>
+        <input type="text" id="player-x" name="player-x" />
+      </div>
+
+      <div class="input-container">
+        <label for="player-o">o</label>
+        <input type="text" id="player-o" name="player-o" />
+      </div>
+
+      <div class="submit-input-container">
+        <input type="submit" value="Play" />
+      </div>
+    </form>
+
     <!-- board -->
-    <div class="board">
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
-      <div class="cell"></div>
+    <div class="board-container">
+      <div class="board">
+        <div class="cell" id="0"></div>
+        <div class="cell" id="1"></div>
+        <div class="cell" id="2"></div>
+        <div class="cell" id="3"></div>
+        <div class="cell" id="4"></div>
+        <div class="cell" id="5"></div>
+        <div class="cell" id="6"></div>
+        <div class="cell" id="7"></div>
+        <div class="cell" id="8"></div>
+      </div>
+
+      <div class="end-container">
+        <div class="end-display"></div>
+        <button class="reset">Reset</button>
+      </div>
     </div>
 
     <script src="script.js"></script>
