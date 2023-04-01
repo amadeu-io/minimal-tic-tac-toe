@@ -7,17 +7,16 @@
   <img src="images/page-screenshot-2.png" width="650px" alt="screenshot">
 </p>
 <h2 align="center">
-  <a href="https://nightrunner4.github.io/tic-tac-toe">👉 Demo</a>
+  <a href="https://nightrunner4.github.io/minimal-tic-tac-toe">👉 Demo</a>
 </h2>
 
 ### About 📖
 
-Second project of the JavaScript chapter in [The Odin Project](https://www.theodinproject.com). Currently in development.
+Second project of the JavaScript chapter in [The Odin Project](https://www.theodinproject.com). A good practice of objects & modules.
 
 ### Resources Used 📚
 
 - [Google Fonts](https://fonts.google.com) (Icons & Font)
-- [EmojiTerra](https://emojiterra.com) (Emojis)
 
 ### Built With 🛠️
 
