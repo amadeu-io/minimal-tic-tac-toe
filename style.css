@@ -36,7 +36,7 @@ body {
 }
 
 input[type="submit"],
-.reset {
+.end-reset {
   padding: 8px 25px;
   font-size: 0.9rem;
   background-color: #ebebeb;
@@ -59,11 +59,11 @@ form {
   margin-top: 130px;
 }
 
-.end-display {
+.end-message {
   margin-top: 80px;
 }
 
-.reset {
+.end-reset {
   margin-top: 20px;
 }
 
@@ -135,7 +135,7 @@ input[type="submit"] {
   align-items: center;
 }
 
-.end-container {
+.end-display {
   display: none;
   /* display: flex; */
   flex-direction: column;
@@ -143,6 +143,6 @@ input[type="submit"] {
   align-items: center;
 }
 
-.end-display {
+.end-message {
   height: 30px;
 }

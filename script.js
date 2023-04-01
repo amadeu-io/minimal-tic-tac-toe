@@ -1,6 +1,14 @@
+// initial state
+const initialState = {
+  count: 0,
+  players: [],
+  turn: true,
+  winner: null,
+};
+
 // game module
 let Game = (() => {
-  let gameBoard = new Array(9); // empty array of 9 undefined
+  let gameBoard = new Array(9).fill(null); // empty array of 9 null
 
   // renders gameBoard array to screen
   const renderGameBoard = () => {
@@ -46,7 +54,7 @@ let Game = (() => {
   };
 
   // winning message. receives the result from checkWin and returns a display message
-  const endMessage = (winner) => {
+  const createEndMessage = (winner) => {
     if (winner === "x") {
       return `${players[0]} wins!`;
     } else if (winner === "o") {
@@ -57,19 +65,18 @@ let Game = (() => {
     return null;
   };
 
-  return { gameBoard, renderGameBoard, checkWin, endMessage };
+  return { gameBoard, renderGameBoard, checkWin, createEndMessage };
 })();
 
 // program starts here
 
-let count = 0;
+let { count, players, turn, winner } = { ...initialState };
 let form = document.querySelector("form");
 let boardContainer = document.querySelector(".board-container");
 let cells = document.querySelectorAll(".cell");
+let endMessage = document.querySelector(".end-message");
 let endDisplay = document.querySelector(".end-display");
-let endContainer = document.querySelector(".end-container");
-let reset = document.querySelector(".reset");
-let players = [];
+let endReset = document.querySelector(".end-reset");
 
 // form
 form.addEventListener("submit", (e) => {
@@ -87,40 +94,40 @@ form.addEventListener("submit", (e) => {
 });
 
 // play game
-let turn = true;
 cells.forEach((cell, index) => {
   cell.addEventListener("click", () => {
-    // play if the square is empty
-    if (!Game.gameBoard[index]) {
+    // play if the square is empty and there is no winner
+    if (!Game.gameBoard[index] && !winner) {
       Game.gameBoard[index] = turn ? "x" : "o";
       turn ^= true;
       Game.renderGameBoard();
     }
 
-    const winner = Game.checkWin(Game.gameBoard);
+    winner = Game.checkWin(Game.gameBoard);
 
     // assign & display end message & button
-    endDisplay.innerHTML = Game.endMessage(winner);
-    if (Game.endMessage(winner)) {
-      endContainer.style.display = "flex";
+    endMessage.innerHTML = Game.createEndMessage(winner);
+    if (Game.createEndMessage(winner)) {
+      endDisplay.style.display = "flex";
     }
   });
 });
 
 // reset
-reset.addEventListener("click", () => {
-  turn ^= true;
+endReset.addEventListener("click", () => {
+  // reset variables to initial state
+  ({ count, players, turn, winner } = { ...initialState });
 
-  // show form
+  // reset & show form
+  form.reset();
   form.style.display = "block";
 
-  // hide game board
+  // reset & hide game board
   boardContainer.style.display = "none";
+  Game.gameBoard.fill(null);
+  Game.renderGameBoard();
 
-  count = 0;
-  Game.gameBoard.fill("");
-
-  // hide and reset end container
-  endDisplay.innerHTML = "";
-  endContainer.style.display = "none";
+  // reset & hide end display
+  endMessage.innerHTML = "";
+  endDisplay.style.display = "none";
 });
