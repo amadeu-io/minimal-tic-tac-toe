@@ -1,7 +1,10 @@
 # Tic Tac Toe 🎲
 
 <p align="center">
-  <img src="images/page-screenshot.png" width="650px" alt="screenshot">
+  <img src="images/page-screenshot-1.png" width="650px" alt="screenshot">
+</p>
+<p align="center">
+  <img src="images/page-screenshot-2.png" width="650px" alt="screenshot">
 </p>
 <h2 align="center">
   <a href="https://nightrunner4.github.io/tic-tac-toe">👉 Demo</a>
