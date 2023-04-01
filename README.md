@@ -1,4 +1,4 @@
-# Tic Tac Toe 🎲
+# minimal tic-tac-toe 🎲
 
 <p align="center">
   <img src="images/page-screenshot-1.png" width="650px" alt="screenshot">
@@ -12,7 +12,7 @@
 
 ### About 📖
 
-Second project of the JavaScript chapter in [The Odin Project](https://www.theodinproject.com). A good practice of objects & modules.
+Second project of the JavaScript chapter in [The Odin Project](https://www.theodinproject.com). A good practice of objects, functions and the module pattern.
 
 ### Resources Used 📚
 
