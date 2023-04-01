@@ -1,4 +1,4 @@
-# minimal tic-tac-toe 🎲
+# Minimal Tic Tac Toe 🎲
 
 <p align="center">
   <img src="images/page-screenshot-1.png" width="650px" alt="screenshot">
@@ -16,7 +16,7 @@ Second project of the JavaScript chapter in [The Odin Project](https://www.theod
 
 ### Resources Used 📚
 
-- [Google Fonts](https://fonts.google.com) (Icons & Font)
+- [Google Fonts](https://fonts.google.com) (Font)
 
 ### Built With 🛠️
 
