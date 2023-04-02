@@ -1,11 +1,3 @@
-// initial state
-const initialState = {
-  count: 0,
-  players: [],
-  turn: true,
-  winner: null,
-};
-
 // game module
 let Game = (() => {
   let gameBoard = new Array(9).fill(null); // empty array of 9 null
@@ -17,7 +9,7 @@ let Game = (() => {
     });
   };
 
-  // check win. returns x, o, tie or null
+  // check win. returns x, o, tie or null. null means the game is not over yet
   const checkWin = () => {
     const winningIndexes = [
       // horizontal wins
@@ -54,7 +46,7 @@ let Game = (() => {
   };
 
   // winning message. receives the result from checkWin and returns a display message
-  const createEndMessage = (winner) => {
+  const createEndMessage = () => {
     if (winner === "x") {
       return `${players[0]} wins!`;
     } else if (winner === "o") {
@@ -69,6 +61,13 @@ let Game = (() => {
 })();
 
 // program starts here
+
+const initialState = {
+  count: 0,
+  players: [],
+  turn: true,
+  winner: null,
+};
 
 let { count, players, turn, winner } = { ...initialState };
 let form = document.querySelector("form");
@@ -101,13 +100,12 @@ cells.forEach((cell, index) => {
       Game.gameBoard[index] = turn ? "x" : "o";
       turn ^= true;
       Game.renderGameBoard();
+      winner = Game.checkWin();
     }
 
-    winner = Game.checkWin(Game.gameBoard);
-
     // assign & display end message & button
-    endMessage.innerHTML = Game.createEndMessage(winner);
-    if (Game.createEndMessage(winner)) {
+    if (winner) {
+      endMessage.innerHTML = Game.createEndMessage(winner);
       endDisplay.style.display = "flex";
     }
   });
