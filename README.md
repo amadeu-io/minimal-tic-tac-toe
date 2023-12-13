@@ -7,7 +7,7 @@
   <img src="images/page-screenshot-2.png" width="650px" alt="screenshot">
 </p>
 <h2 align="center">
-  <a href="https://nightrunner4.github.io/minimal-tic-tac-toe">👉 Demo</a>
+  <a href="https://amadeu-io.github.io/minimal-tic-tac-toe">👉 Demo</a>
 </h2>
 
 ### About 📖
